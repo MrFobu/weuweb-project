@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*nav*/
+header {
+  position: sticky;
+  top: 0;
+}
+nav {
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 5px 5px;
+}
+/*hero*/
+.hero-image {
+  background-image: url(images/Kitchen.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+  position: relative;
+}
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+#search {
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+}
