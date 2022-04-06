@@ -11,22 +11,23 @@ async function search(term) {
   );
   let json = await response.json();
   console.log(json);
-  console.log(json);
   render(json.results);
 }
 
 let container = document.getElementById("searchResults");
 function render(objectList) {
-  console.log("render");
-  console.log(objectList);
   for (let i = 0; i < objectList.length; i++) {
-    let item = document.createElement("div");
+    let item = document.createElement("a");
     item.classList.add("result");
+    item.href = `recipie.html?id=${objectList[i].id}`;
+
     let img = document.createElement("img");
     img.classList.add("result_image");
     img.src = objectList[i].image;
+
     let title = document.createElement("h2");
     title.innerText = objectList[i].title;
+
     item.append(img);
     item.append(title);
     container.append(item);

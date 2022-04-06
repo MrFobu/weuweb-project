@@ -1,0 +1,10 @@
+.title_section {
+  width: 100%;
+}
+.recipie_header {
+  width: 80%;
+  display: flex;
+}
+.false {
+  display: none;
+}
