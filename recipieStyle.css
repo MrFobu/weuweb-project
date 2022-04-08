@@ -8,3 +8,40 @@
 .false {
   display: none;
 }
+
+.recipie_section {
+  width: 100%;
+}
+.recipie_container {
+  display: flex;
+  margin: 20px;
+}
+
+.ingredients {
+  margin-right: 20px;
+  box-shadow: 5px 5px 5px;
+}
+
+.instruction_list {
+  list-style: none;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+li {
+  counter-increment: inst;
+  margin-bottom: 30px;
+  position: relative;
+}
+.instruction_list li::before {
+  content: counter(inst);
+  font-size: 30px;
+  font-weight: bold;
+  background-color: rgba(146, 200, 121, 0.432);
+  padding-right: 0.3em;
+  padding-left: 0.3em;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  top: -20px;
+  left: -25px;
+}

@@ -45,21 +45,20 @@ function render(item) {
       </span>
     </div>
   </section>
-  <section class="recipie_Section">
+  <section class="recipie_section">
   <div class="recipie_container">
     <span id="ingrediets">
 
     </span>
-    <span id="recipie">
+    <span id="ingredients" class="ingredients">
       <table id="ingredientList"></table>
     </span>
     <span id="instructions">
-      <table id="instructionList"></table>
+      <ol id="instructionList" class="instruction_list"></ol>
     </span>
   </div>
 </section>
     `;
-  //inserts the template
   let container = document.getElementById("recipieContainer");
   container.insertAdjacentHTML("afterbegin", recipie);
 
@@ -67,33 +66,21 @@ function render(item) {
   let ingredientTable = document.getElementById("ingredientList");
 
   for (let i = 0; i < item.extendedIngredients.length; i++) {
-    let ingredientRow = document.createElement("tr");
-    let ammount = document.createElement("td");
-    let ingredient = document.createElement("td");
-
-    var x = item.extendedIngredients[i];
-    ammount.append(
-      `${x.measures.metric.amount} ${x.measures.metric.unitShort}`
-    );
-    ingredient.append(x.nameClean);
-    ingredientRow.append(ammount);
-    ingredientRow.append(ingredient);
-
-    ingredientTable.append(ingredientRow);
-    console.log(ingredientRow);
+    let ingredients = item.extendedIngredients[i];
+    let ingredient = `
+    <tr>
+      <td>${ingredients.measures.metric.amount} ${ingredients.measures.metric.unitShort}</td>
+      <td>${ingredients.nameClean}</td>
+    </tr>`;
+    console.log(ingredient);
+    ingredientTable.insertAdjacentHTML("beforeend", ingredient);
   }
 
   let instructions = document.getElementById("instructionList");
   let steps = item.analyzedInstructions[0].steps;
   for (let i = 0; i < steps.length; i++) {
-    let step = document.createElement("tr");
-    let stepNumber = document.createElement("td");
-    let stepInstruction = document.createElement("td");
-    stepNumber.append(`${steps[i].number}. `);
-    stepInstruction.append(steps[i].step);
-    step.append(stepNumber);
-    step.append(stepInstruction);
-    instructions.append(step);
+    let recipieStep = `<li>${steps[i].step}</li>`;
+    instructions.insertAdjacentHTML("beforeend", recipieStep);
   }
 }
 
@@ -105,6 +92,9 @@ function renderError(error) {
       "I've looked far an wide, and I'm like 90% sure it doesn't exist. You should totally check under the bed though..";
   } else if (error == 401) {
     message = "So apparently you cant be here, guess you're not cool enough...";
+  } else if (error == 402) {
+    message =
+      "Free only goes so far, spoonaculars daily quota is all dried up.";
   } else {
     message = "I have no idea what happened lol ¯_(ツ)_/¯";
   }
