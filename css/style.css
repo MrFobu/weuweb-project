@@ -31,7 +31,7 @@ nav {
 
 /*hero*/
 .hero-image {
-  background-image: url(images/Kitchen.jpg);
+  background-image: url(../images/Kitchen.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 

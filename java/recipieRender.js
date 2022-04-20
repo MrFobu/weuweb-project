@@ -28,18 +28,17 @@ function render(item) {
     <section class="title_section">
     <div class="recipie_header">
       <img src=${item.image} />
-      <span>
+      <span class="information">
         <h1>${item.title}</h1>
-        <ul>
+        <ul class="info_list">
           <li>${item.servings} servings</li>
           <li>${item.readyInMinutes} minutes.</li>
-          <li>
-          <span class=${item.cheap}>Cheap</span>
-          <span class=${item.glutenFree}>Gluten Free</span>
-          <span class=${item.vegetarian}>Vegetarian</span>
-          <span class=${item.Vegan}>Vegan</span>
-          <span class=${item.veryHealthy}>Healthy</span>
-          
+          <li class="tags">
+          <span class="${item.cheap} tag">Cheap</span>
+          <span class="${item.glutenFree} tag">Gluten Free</span>
+          <span class="${item.vegetarian} tag">Vegetarian</span>
+          <span class="${item.vegan} tag">Vegan</span>
+          <span class="${item.veryHealthy} tag">Healthy</span>
           </li>
         </ul>
       </span>
@@ -64,18 +63,19 @@ function render(item) {
 
   //inserts ingredients list
   let ingredientTable = document.getElementById("ingredientList");
-
   for (let i = 0; i < item.extendedIngredients.length; i++) {
     let ingredients = item.extendedIngredients[i];
-    let ingredient = `
-    <tr>
-      <td>${ingredients.measures.metric.amount} ${ingredients.measures.metric.unitShort}</td>
-      <td>${ingredients.nameClean}</td>
-    </tr>`;
-    console.log(ingredient);
-    ingredientTable.insertAdjacentHTML("beforeend", ingredient);
+    let newRow = ingredientTable.insertRow();
+    let cell1 = newRow.insertCell();
+    let cell2 = newRow.insertCell();
+    var newText = document.createTextNode(
+      `${ingredients.measures.metric.amount} ${ingredients.measures.metric.unitShort}`
+    );
+    var newText2 = document.createTextNode(`${ingredients.nameClean}`);
+    cell1.appendChild(newText);
+    cell2.appendChild(newText2);
   }
-
+  //Inserts instructions
   let instructions = document.getElementById("instructionList");
   let steps = item.analyzedInstructions[0].steps;
   for (let i = 0; i < steps.length; i++) {
@@ -96,7 +96,7 @@ function renderError(error) {
     message =
       "Free only goes so far, spoonaculars daily quota is all dried up.";
   } else {
-    message = "I have no idea what happened lol ¯_(ツ)_/¯";
+    message = "I have no idea how this happened lol ¯_(ツ)_/¯";
   }
   container.append(`${error}: ${message}`);
   container.classList.add("error");

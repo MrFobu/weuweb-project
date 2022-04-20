@@ -1,5 +1,6 @@
 .title_section {
   width: 100%;
+  margin: 20px;
 }
 .recipie_header {
   width: 80%;
@@ -8,9 +9,34 @@
 .false {
   display: none;
 }
-
+.information {
+  margin-left: 20px;
+  background-color: #c4beb2;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 230px;
+}
+.tag {
+  background-color: #2fb63a;
+  color: white;
+  padding: 5px;
+  border-radius: 1em;
+  width: fit-content;
+  margin-bottom: 5px;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+.info_list {
+  list-style: none;
+}
+/*recipie stuff*/
 .recipie_section {
   width: 100%;
+  box-shadow: 0 0px 10px;
+  display: flex;
 }
 .recipie_container {
   display: flex;
@@ -19,7 +45,7 @@
 
 .ingredients {
   margin-right: 20px;
-  box-shadow: 5px 5px 5px;
+  border: solid;
 }
 
 .instruction_list {
@@ -44,4 +70,14 @@ li {
   z-index: -1;
   top: -20px;
   left: -25px;
+}
+
+#ingredientList {
+  border-collapse: collapse;
+}
+#ingredientList td {
+  padding: 5px;
+}
+#ingredientList tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
