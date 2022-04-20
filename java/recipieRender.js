@@ -89,7 +89,7 @@ function renderError(error) {
   let container = document.getElementById("errorContainer");
   if (error == 404) {
     message =
-      "I've looked far an wide, and I'm like 90% sure it doesn't exist. You should totally check under the bed though..";
+      "I've looked far an wide, and I'm like 90% sure it doesn't exist. Try checking under the bed..";
   } else if (error == 401) {
     message = "So apparently you cant be here, guess you're not cool enough...";
   } else if (error == 402) {
