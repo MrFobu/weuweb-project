@@ -28,20 +28,20 @@ function render(item) {
     <section class="title_section">
     <div class="recipie_header">
       <img class="recipie_image" src=${item.image} />
-      <span class="information">
+      <div class="information">
         <h1>${item.title}</h1>
         <ul class="info_list">
           <li>${item.servings} servings</li>
           <li>${item.readyInMinutes} minutes.</li>
           <li class="tags">
-          <span class="${item.cheap} tag">Cheap</span>
-          <span class="${item.glutenFree} tag">Gluten Free</span>
-          <span class="${item.vegetarian} tag">Vegetarian</span>
-          <span class="${item.vegan} tag">Vegan</span>
-          <span class="${item.veryHealthy} tag">Healthy</span>
+          <div class="${item.cheap} tag">Cheap</div>
+          <div class="${item.glutenFree} tag">Gluten Free</div>
+          <div class="${item.vegetarian} tag">Vegetarian</div>
+          <div class="${item.vegan} tag">Vegan</div>
+          <div class="${item.veryHealthy} tag">Healthy</div>
           </li>
         </ul>
-      </span>
+      </div>
     </div>
   </section>
   <section class="recipie_section">
