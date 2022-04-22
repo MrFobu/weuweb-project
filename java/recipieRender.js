@@ -27,7 +27,7 @@ function render(item) {
   let recipie = `
     <section class="title_section">
     <div class="recipie_header">
-      <img src=${item.image} />
+      <img class="recipie_image" src=${item.image} />
       <span class="information">
         <h1>${item.title}</h1>
         <ul class="info_list">

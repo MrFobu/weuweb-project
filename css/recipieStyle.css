@@ -1,10 +1,10 @@
 .title_section {
-  width: 100%;
   margin: 20px;
 }
 .recipie_header {
-  width: 80%;
+  width: 90%;
   display: flex;
+  flex-wrap: wrap;
 }
 .false {
   display: none;
@@ -15,7 +15,6 @@
   height: fit-content;
   padding: 20px;
   border-radius: 10px;
-  max-width: 230px;
 }
 .tag {
   background-color: #2fb63a;
@@ -80,4 +79,21 @@ li {
 }
 #ingredientList tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+@media only screen and (max-width: 870px) {
+  .recipie_image {
+    width: 100%;
+  }
+  .information {
+    margin-top: 20px;
+    width: 90%;
+  }
+  .info_list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .info_list li {
+    margin-right: 20px;
+  }
 }
