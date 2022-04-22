@@ -7,7 +7,7 @@ function getSearch() {
 
 async function search(term) {
   let response = await fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?query=${term}&apiKey=d70af83541ae424ea49d502f873f9311`
+    `https://api.spoonacular.com/recipes/complexSearch?query=${term}&apiKey=d70af83541ae424ea49d502f873f9311&number=20`
   );
   let json = await response.json();
   console.log(json);
