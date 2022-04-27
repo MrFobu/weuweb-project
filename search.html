@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <script
+      src="https://kit.fontawesome.com/1047771e70.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div id="wrapper">
@@ -17,10 +22,18 @@
           </ul>
         </nav>
       </header>
-
-      <section class="search_Section"></section>
+      <section class="search_box">
+        <form>
+          <input
+            type="text"
+            id="searchBox"
+            placeholder="Search for recipies..."
+          />
+        </form>
+      </section>
       <section id="searchResults" class="search_results"></section>
     </div>
     <script src="java/searchRender.js"></script>
+    <script src="java/search.js"></script>
   </body>
 </html>

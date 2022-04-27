@@ -46,15 +46,13 @@ function render(item) {
   </section>
   <section class="recipie_section">
   <div class="recipie_container">
-    <span id="ingrediets">
-
-    </span>
-    <span id="ingredients" class="ingredients">
+    <div id="ingredients" class="ingredients">
       <table id="ingredientList"></table>
-    </span>
-    <span id="instructions">
+      <button onclick="window.print()">Print <i class="fa-solid fa-print"></i></button>
+      </div>
+    <div id="instructions">
       <ol id="instructionList" class="instruction_list"></ol>
-    </span>
+    </div>
   </div>
 </section>
     `;
@@ -68,12 +66,18 @@ function render(item) {
     let newRow = ingredientTable.insertRow();
     let cell1 = newRow.insertCell();
     let cell2 = newRow.insertCell();
+    let cell3 = newRow.insertCell();
     var newText = document.createTextNode(
       `${ingredients.measures.metric.amount} ${ingredients.measures.metric.unitShort}`
     );
     var newText2 = document.createTextNode(`${ingredients.nameClean}`);
-    cell1.appendChild(newText);
-    cell2.appendChild(newText2);
+    var box = document.createElement("input");
+    box.type = "checkbox";
+    box.classList.add("checkbox");
+    box.classList.add("no_print");
+    cell1.appendChild(box);
+    cell2.appendChild(newText);
+    cell3.appendChild(newText2);
   }
   //Inserts instructions
   let instructions = document.getElementById("instructionList");
@@ -82,6 +86,7 @@ function render(item) {
     let recipieStep = `<li>${steps[i].step}</li>`;
     instructions.insertAdjacentHTML("beforeend", recipieStep);
   }
+  boxEvent();
 }
 
 function renderError(error) {

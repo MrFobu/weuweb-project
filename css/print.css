@@ -1,0 +1,13 @@
+body {
+  visibility: hidden;
+}
+.print {
+  visibility: visible;
+}
+.no_print {
+  display: none;
+}
+.ingredients {
+  position: absolute;
+  top: 10px;
+}
