@@ -31,8 +31,8 @@ function render(item) {
       <div class="information">
         <h1>${item.title}</h1>
         <ul class="info_list">
-          <li>${item.servings} servings</li>
-          <li>${item.readyInMinutes} minutes.</li>
+          <li><i class="fa fa-solid fa-utensils"></i> ${item.servings} servings</li>
+          <li><i class="fa fa-solid fa-clock"></i> ${item.readyInMinutes} minutes.</li>
           <li class="tags">
           <div class="${item.cheap} tag">Cheap</div>
           <div class="${item.glutenFree} tag">Gluten Free</div>
@@ -48,7 +48,7 @@ function render(item) {
   <div class="recipie_container">
     <div id="ingredients" class="ingredients">
       <table id="ingredientList"></table>
-      <button onclick="window.print()">Print <i class="fa-solid fa-print"></i></button>
+      <button onclick="window.print()">Print <i class="fa fa-solid fa-print"></i></button>
       </div>
     <div id="instructions">
       <ol id="instructionList" class="instruction_list"></ol>

@@ -1,3 +1,9 @@
+h1 {
+  margin-bottom: 15px;
+}
+.info_list li {
+  margin-bottom: 10px;
+}
 .title_section {
   margin: 20px;
 }
@@ -45,6 +51,8 @@
 .ingredients {
   margin-right: 20px;
   border: solid;
+  display: flex;
+  flex-direction: column;
 }
 
 .instruction_list {
@@ -52,7 +60,7 @@
   margin-top: 20px;
   margin-left: 25px;
 }
-li {
+.instruction_list li {
   counter-increment: inst;
   margin-bottom: 30px;
   position: relative;
