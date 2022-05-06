@@ -1,6 +1,7 @@
+let searchTerm = "";
 function getSearch() {
   let searchParams = new URLSearchParams(window.location.search);
-  let searchTerm = searchParams.get("search");
+  searchTerm = searchParams.get("search");
   console.log(searchTerm);
   search(searchTerm);
 }
@@ -33,7 +34,7 @@ function render(objectList) {
       item.append(title);
       container.append(item);
     }
-  } else {
+  } else if (searchTerm != null) {
     let err = document.createElement("h1");
     err.innerHTML = "There is nothing here... maybe try something else";
     container.append(err);
