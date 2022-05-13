@@ -109,3 +109,12 @@ h1 {
     margin-right: 20px;
   }
 }
+
+@media only screen and (max-width: 700px) {
+  .recipie_container {
+    flex-direction: column;
+  }
+  .instruction_list {
+    margin-top: 90px;
+  }
+}
